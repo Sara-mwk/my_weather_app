@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather app</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+  <div class="weather-app">
+    <div class="container">
+      <div class="row">
+      <div id="weather" class="weather-container">
+        <div class="emoji">
+          <span class="weather">⛅</span>
+        </div>
+        <div class="raw">
+          <div class="col-4">
+            <div class="approximately">
+              <ul class="current-whp">
+               <li> humidity <span id="hum"></span> % </li>
+               <li> wind <span id="wind"></span> km/h </li>
+               <li> pressure <span id="description"></span> </li></li>
+             </ul>
+             </div>
+          </div>
+       
+
+        <div class="info-left">
+          <form class="weather-search" id="search-form">
+            <div class="row">
+                <div class="col-5">
+                    <input 
+                    type="text"
+                    placeholder="Type a city.."
+                    class="form-control"
+                    id="city-input"
+                    autocomplete="off"
+                    />
+                   <div class="c0l-3">
+                     <button 
+                     type="submit"
+                     value="search-button"
+                     class="btn-btn-primary"
+                     id="search-button">
+                     Search
+                    </button>
+                   </div>
+        
+          <div class="col-3">
+					<button 
+					type="submit"
+					class="btn btn-success" 
+					id="current-button">
+					 Current
+					</button>
+          </div>
+        </div>
+        </form>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="info-left">
+        <h1 id="current-city">Omaha</h1>
+        <ul id="current-desc">Partly Cloudy</ul>
+        <strong>
+        <big>
+        <span id="current-temp">25 </span>
+        <span id="celsius"><a href="#">°C</a></span>
+        <span class="seperator">/</span>
+        <span id="fahrenheit"><a href="#">°F</a></span>
+         </big>
+      </strong>
+       <p id="description"></p>
+<div class="col-6">
+  <ul id="updated">
+    June 22d, 2022, 11:00pm
+      </ul>
+    </div>
+     </div>
+</div>     
+ </div>
+<div  id="weather-5days" class="weather-container-5days">
+ <div class="row days">
+    <div class="col-2">
+      <div class="card">
+      <div class="card-body">
+      <h5 class="card-title">Mon</h5>
+
+      <span class="sun_behind_cloud">🌤</span> 
+
+      <p>24°C</p>
+    </div>
+      </div>
+      </div>
+
+ <div class="col-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Tue</h5>
+        <span class="sunny">☀</span>
+
+        <p>30°C</p>
+      </div>
+    </div>
+    </div>
+    
+  <div class="col-2">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Wed</h5>
+  <span class="sun_behind_cloud">⛅</span>
+
+  <p>26°C</p>
+  </div>
+</div>
+  </div>
+
+
+<div class="col-2">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Thu</h5>
+     <span class="cloudy">☁</span>
+
+        <p>25°C</p>
+  </div>
+</div>
+  </div>
+
+
+  <div class="col-2">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Fri</h5>
+  <span class="rainy">🌦</span>
+
+        <p>23°C</p>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
