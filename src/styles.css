@@ -74,3 +74,16 @@ p {
 .weather-container-5days {
   margin-left: 90px;
 }
+
+.col-12 {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration-style: solid;
+  text-size-adjust: 10px;
+}
+
+.source-link {
+  text-decoration: none;
+  color: #240a81;
+  font-weight: 600;
+}
