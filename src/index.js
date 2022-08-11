@@ -79,34 +79,11 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Omaha");
 
-//function search(event) {
-//  event.preventDefault();
-// let cityLine = document.querySelector("#current-city");
-// let cityInput = document.querySelector("#city-input");
-// cityLine.innerHTML = cityInput.value.bold();
-//}
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (14*9)/5+32;
+  alert(fahrenheitTemperature);
+}
 
-//let searchCityForm = document.querySelector("#search-form");
-//searchCityForm.addEventListener("submit", search);
-
-//function convertFah(event) {
-// event.preventDefault();
-
-//  let tempCel = document.querySelector("#current-temp");
-//  let currentTemp = 25;
-// let tempFah = Math.round(currentTemp * 1.8 + 32);
-//  tempCel.innerHTML = tempFah;
-//}
-
-//function convertCel(event) {
-// event.preventDefault();
-
-// let tempCel = document.querySelector("#current-temp");
-// let currentTemp = 25;
-// tempCel.innerHTML = currentTemp;
-//}
-
-//let tempFah = document.querySelector("#fahrenheit");
-//tempFah.addEventListener("click", convertFah);
-//let tempCel = document.querySelector("#celsius");
-//tempCel.addEventListener("click", convertCel);
+let fahrenheitLink = document.querySelector("#fahremheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
