@@ -37,14 +37,20 @@ function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-desc").innerHTML =
     response.data.weather[0].main;
-  document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#current-temp").innerHTML = Math.round(celsuisTemperature);
+
+    celsuisTemperature = response.data.main.temp;
+
+
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 }
+
+
+
+
 //url
 function searchCity(city) {
   let apiKey = "8cfa4dd3ccafa97ae01716474ab8d486";
@@ -69,21 +75,43 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getLocation);
 }
-//listen to the city
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
+
 
 //listen to current location
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("Omaha");
-
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (14*9)/5+32;
-  alert(fahrenheitTemperature);
+  let temperatureElement = document.querySelector("#current-temp");
+  //remove the active class the celsius link
+  celsiusLink.classList.remove("#active");
+  fahrenheitLink.classList.add("#active");
+  let fahrenheitTemperature = (celsuisTemperature * 9)/5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let fahrenheitLink = document.querySelector("#fahremheit-link");
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsuisTemperature);
+}
+
+let celsuisTemperature = null;
+
+//listen to the city
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+
+
+searchCity("Omaha");

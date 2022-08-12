@@ -63,11 +63,14 @@
         </div>
         <div class="info-left">
         <h1 id="current-city">Omaha</h1>
-        <ul id="current-desc">Partly Cloudy</ul>
+        <div class="weather-temperature">        
         <div class="clearfix">
-       <span id="current-temp"><strong></strong>25</strong></span>
-        <span class="units">°C |<a href="#" id="fahrenheit-link">°F</a></span>
-      </div>
+       <strong id="current-temp"></strong>
+        <span class="units"><a href="#" id="celsius-link" class="active">°C</a> |
+          <a href="#" id="fahrenheit-link">°F</a></span>
+        </div>
+          <ul id="current-desc">Partly Cloudy</ul>
+      
       
        <p id="description"></p>
 <div class="col-6">
@@ -78,7 +81,7 @@
      </div>
 </div>     
  </div>
-<div  id="weather-5days" class="weather-container-5days">
+<div  id="weather-5days" class="weather-container 5days">
  <div class="row days">
     <div class="col-2">
       <div class="card">
